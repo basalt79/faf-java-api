@@ -7,6 +7,9 @@ sudo: required
 git:
   depth: 3
 
+env:
+  - DB_NAME=faf
+  
 before_install:
   - sudo /etc/init.d/mysql stop
   - sudo rm /usr/local/bin/docker-compose
