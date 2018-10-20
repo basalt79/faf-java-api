@@ -13,7 +13,6 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 
 import javax.validation.ConstraintViolationException;
 import javax.validation.ValidationException;
-import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.concurrent.CompletionException;
 
@@ -149,7 +148,7 @@ class GlobalControllerExceptionHandler {
       response.addError(new ErrorResult(
         String.valueOf(status.value()),
         errorCode.getTitle(),
-        MessageFormat.format(errorCode.getDetail(), args),
+        error.getErrorDetailMessage(),
         String.valueOf(errorCode.getCode()),
         ErrorResult.createMeta(args, null).orElse(null)
       ));
